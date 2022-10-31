@@ -15,8 +15,8 @@ export default {
   },
   created() {
     fetchJobsList()
-    .then(res => this.jobs = res.data)
-    .catch(err => console.log(err))
+      .then(res => this.jobs = res.data)
+      .catch(err => console.log(err))
   }
 }
 </script>
