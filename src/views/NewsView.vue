@@ -6,7 +6,10 @@
       </a>
       <small>
         {{ artic.time_ago }}
-        by {{ artic.user }}
+        by
+        <router-link v-bind:to="`/user/${artic.user}`">
+          {{ artic.user }}
+        </router-link>
       </small>
     </p>
   </div>
