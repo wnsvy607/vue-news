@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p v-for="item in fetchedAsk" v-bind:key="item.id"> 
-      <a :href="item.url">
+    <p v-for="item in fetchedAsk" v-bind:key="item.id">
+      <router-link v-bind:to="`/item/${item.id}`">
         {{ item.title }}
-      </a>
+      </router-link>
       <small>
         {{ item.time_ago }}
         by {{ item.user }}
@@ -13,21 +13,17 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   computed: {
     // ...mapState({
     //   ask: state => state.ask
     // }),
-    ...mapGetters([
-      'fetchedAsk'
-    ])
+    ...mapGetters(["fetchedAsk"]),
   },
   methods: {
-    ...mapActions([
-      'FETCH_ASK',
-    ])
+    ...mapActions(["FETCH_ASK"]),
   },
 
   created() {
@@ -35,11 +31,9 @@ export default {
     // fetchAskList()
     // .then(res => this.list = res.data)
     // .catch(err => console.log(err))
-  }
-
-}
+  },
+};
 </script>
 
 <style>
-
 </style>
