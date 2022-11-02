@@ -25,14 +25,27 @@ body {
 }
 
 /* Router Transition */
-.page-enter-active, 
+.page-enter-active,
 .page-leave-active {
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 }
 
-.page-enter, 
+.page-enter,
 .page-leave-to {
   opacity: 0;
 }
 
+a {
+  color: #34495e;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #42b883;
+  text-decoration: underline;
+}
+
+a.router-link-exact-active {
+  text-decoration: underline;
+}
 </style>
