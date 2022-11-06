@@ -2,18 +2,19 @@
   <div>
     <section>
       <!-- 사용자 상세 정보 -->
-    <UserProfile>
-      <div slot="username">{{ fetchedItem.user}}</div>
-      <template slot="time">{{ fetchedItem.time_ago}}</template>
-    </UserProfile>
+      <UserProfile>
+        <router-link slot="username" :to="`/user/${fetchedItem.user}`">
+          {{ fetchedItem.user }}
+        </router-link>
+        <template slot="time">{{ 'Posted ' + fetchedItem.time_ago }}</template>
+      </UserProfile>
     </section>
     <section>
       <h2>{{ fetchedItem.title }}</h2>
     </section>
     <section>
       <!-- 질문 댓글 -->
-      <div v-html="fetchedItem.content">
-      </div>
+      <div v-html="fetchedItem.content"></div>
     </section>
   </div>
 </template>
@@ -31,7 +32,7 @@ export default {
   },
   components: {
     UserProfile,
-  }
+  },
 };
 </script>
 
