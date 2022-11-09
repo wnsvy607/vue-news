@@ -8,28 +8,54 @@ const config = {
 }
 
 // 2. API 함수들을 정리
-function fetchNewsList() {
+async function fetchNewsList() {
     // return axios.get(conig.baseUrl + 'news/1.json')
-    return axios.get(`${config.baseUrl}news/1.json`);
+    try {
+        return await axios.get(`${config.baseUrl}news/1.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function fetchJobsList() {
-    return axios.get(`${config.baseUrl}jobs/1.json`);
+async function fetchJobsList() {
+    try {
+        return await axios.get(`${config.baseUrl}jobs/1.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
-function fetchAskList() {
-    return axios.get(`${config.baseUrl}ask/1.json`);
+async function fetchAskList() {
+    try {
+        return await axios.get(`${config.baseUrl}ask/1.json`);
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 
-function fetchList(pageName) {
-    return axios.get(`${config.baseUrl}${pageName}/1.json`)
+async function fetchList(pageName) {
+    try {
+        return await axios.get(`${config.baseUrl}${pageName}/1.json`)
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function fetchUserInfo(userName) {
-    return axios.get(`${config.baseUrl}user/${userName}.json`);
+async function fetchUserInfo(userName) {
+    try {
+        return await axios.get(`${config.baseUrl}user/${userName}.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function fetchItemInfo(id) {
-    return axios.get(`${config.baseUrl}item/${id}.json`);
+async function fetchItemInfo(id) {
+    try {
+        return await axios.get(`${config.baseUrl}item/${id}.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
